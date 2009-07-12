@@ -1,0 +1,6 @@
+category: Audio
+requires: libfftw3_3 libgcc1 libsndfile1 libstdc++6
+sdesc: "LADSPA phase-vocoding plugins"
+ldesc: "pvoc is a collection of LADSPA units and a command line tool for 
+time compression/expansion of sound data making use of the 
+phase-vocoding technique."
