@@ -1,0 +1,25 @@
+NAME="ladspa-pvoc"
+VERSION=0.1.12
+RELEASE=1
+CATEGORY="Audio"
+SUMMARY="LADSPA phase-vocoding plugins"
+DESCRIPTION="pvoc is a collection of LADSPA units and a command line tool for
+time compression/expansion of sound data making use of the phase-vocoding
+technique."
+HOMEPAGE="http://quitte.de/dsp/pvoc.html"
+SRC_URI="http://quitte.de/dsp/pvoc_${VERSION}.tar.gz"
+SRC_DIR="pvoc-${VERSION}"
+PATCH_URI="0.1.12-build.patch"
+
+DISTCLEANFILES="ladspa.h"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	cyginstall PREFIX=${D}/usr STRIP=:
+}
